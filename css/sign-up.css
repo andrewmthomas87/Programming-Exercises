@@ -1,0 +1,61 @@
+
+form {
+	width: 25em;
+	margin: 0.75em auto;
+}
+
+form input {
+	display: block;
+	color: #fff;
+	width: calc(100% - 2em);
+	padding: 1em;
+	margin: 0;
+	background-color: #3f2459;
+	border: none;
+	outline: none;
+	font-family: "Raleway", sans-serif;
+	font-size: 1.5em;
+	font-weight: 200;
+	text-align: center;
+	box-sizing: content-box;
+}
+
+form span {
+	display: none;
+	color: #fff;
+	background-color: #c0392b;
+	width: 100%;
+	padding-bottom: 0.5em;
+	margin-top: -1.5em;
+	font-size: 0.75em;
+	text-align: center;
+	line-height: 1em;
+}
+
+form input.invalid {
+	background-color: #c0392b;
+}
+
+form input.invalid+span {
+	display: block;
+}
+
+form input[type="submit"] {
+	cursor: pointer;
+}
+
+::-webkit-input-placeholder {
+	color: #fff;
+}
+
+:-moz-placeholder {
+	color: #fff;  
+}
+
+::-moz-placeholder {
+	color: #fff;  
+}
+
+:-ms-input-placeholder {  
+	color: #fff;  
+}

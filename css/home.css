@@ -1,0 +1,35 @@
+
+body {
+	overflow: hidden;
+}
+
+section#bars {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	white-space: nowrap;
+	-webkit-transform: translate(-50%, 50%);
+	        transform: translate(-50%, 50%);
+}
+
+section#bars div {
+	display: inline-block;
+	width: 0;
+	height: 0;
+	background-color: #3f2459;
+	border-radius: 50%;
+	vertical-align: bottom;
+	-webkit-transition: width 0.25s ease, height 0.25s ease;
+	        transition: width 0.25s ease, height 0.25s ease;
+}
+
+section#bars div:first-child {
+	margin-right: 25%;
+}
+
+h3 a {
+	color: #fff;
+	padding: 0.375em;
+	margin: 0.125em;
+	background-color: #3f2459;
+}
