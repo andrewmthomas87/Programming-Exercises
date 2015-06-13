@@ -90,11 +90,36 @@ section#sidebar a {
 	color: #fff;
 	width: 8em;
 	padding: 0 1em;
-	padding-bottom: 1em;
+	padding-bottom: 0.5em;
+	padding-top: 0.5em;
 	font-size: 2em;
 	font-weight: 200;
 	text-decoration: none;
 	cursor: pointer;
+}
+
+section#sidebar a.delete {
+	display: none;
+	background-color: #c0392b;
+	color: #fff;
+	width: 8em;
+	padding: 0 1em;
+	padding-bottom: 0.5em;
+	padding-top: 0.5em;
+	margin: 0;
+	font-family: "Raleway", sans-serif;
+	font-size: 1.5em;
+	font-weight: 200;
+	text-align: center;
+	box-sizing: content-box;
+}
+
+section#sidebar a.class-name:hover+a.delete {
+	display: inline-block;
+}
+
+section#sidebar a.delete:hover {
+	display: inline-block;
 }
 
 section#sidebar span {

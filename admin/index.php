@@ -19,21 +19,21 @@ echo <<<_END
 	<body>
 		<section id="sidebar">
 			<h1>Classes</h1>
+			<span>+</span>
 
 _END;
 
 $mysqli = new mysqli("localhost", "progra71", "Asdf_195789", "progra71_data");
-$SQL = "SELECT name FROM classes";
+$SQL = "SELECT id, name FROM classes";
 $statement = $mysqli->prepare($SQL);
-$statement->bind_result($name);
+$statement->bind_result($id, $name);
 $statement->execute();
 while ($statement->fetch()) {
-	echo "			<a>$name</a>\n";
+	echo "			<a class=\"class-name\" class-id=\"$id\">$name</a><a class=\"delete\" class-id=\"$id\">Delete</a>\n";
 }
 $statement->close();
 
 echo <<<_END
-			<span>+</span>
 		</section><!--
 		--><section id="main">
 			

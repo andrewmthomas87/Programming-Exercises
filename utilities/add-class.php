@@ -23,6 +23,13 @@ if (!$response["error"]) {
 	$statement->execute();
 	$statement->close();
 	$response["name"] = $name;
+	
+	$SQL = "SELECT id FROM classes WHERE name = '$name'";
+	$statement = $mysqli->prepare($SQL);
+	$statement->bind_result($id);
+	$statement->execute();
+	$statement->close();
+	$response["id"] = $id;
 }
 
 echo json_encode($response);

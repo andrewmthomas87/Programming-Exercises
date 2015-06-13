@@ -21,15 +21,30 @@ $(document).ready(function() {
 			}, function(response) {
 				response = JSON.parse(response);
 				if (!response.error) {
-					$("section#sidebar").append("<a>" + response.name + "</a>");
+					alert(response.id);
+					$("section#sidebar").append("<a class=\"class-name\" class-id=\"" + response.id + "\">" + response.name + "</a><a class=\"delete\">Delete</a>\n");
 					inputs.eq(0).val("");
 					inputs.eq(1).val("");
+					$("section#sidebar").find("span").show("fast");
 					$("form#newClass").hide("fast", function() {
-						$("section#sidebar, div#overlay").hide("fast");
+						$("div#overlay").hide("fast");
 					});
 				}
 			});
 		}
+	});
+	
+	$("section#sidebar").on("click", "a.delete", function() {
+		var id = $(this).prev().attr("class-id");
+		$.post("../utilities/remove-class.php", {
+			id: id
+		}, function(response) {
+			response = JSON.parse(response);
+			if (!response.error) {
+				$("section#sidebar a[class-id=\"" + id + "\"].class-name").remove();
+				$("section#sidebar a[class-id=\"" + id + "\"].delete").remove();
+			}
+		});
 	});
 	
 });
